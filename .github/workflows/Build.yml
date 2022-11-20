@@ -13,10 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: vcpkg submodule
+      run: git submodule add https://github.com/microsoft/vcpkg.git
+
     - name: run-vcpkg
       uses: lukka/run-vcpkg@v10.6
 
-    - name: Configure CMake
+    - name: Update dependencies
       run: vcpkg install libopenal libsdl2 libpng12 libglu1-mesa zlib1g
 
     - name: Configure CMake
