@@ -20,6 +20,9 @@ jobs:
       uses: lukka/run-vcpkg@v10.6
 
     - name: Update dependencies
+      run: vkpkg\bootstrap-vcpkg.bat
+
+    - name: Update dependencies
       run: vkpkg install openal-soft sdl2 libpng zlib
 
     - name: Configure CMake
